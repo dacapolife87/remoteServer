@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="Account">
+ 
+    <resultMap id="login" type="net.remote.remoteServer.vo.LoginUser">
+        <result property="userid" column="userid"/>
+        <result property="userpw" column="userpw"/>   
+    </resultMap>
+ 
+    <select id="selectLogin" resultMap="login">
+        SELECT userid, userpw FROM tbl_account_info where userid = #{userId} and userpw = #{userPw};
+    </select>
+
+</mapper>
